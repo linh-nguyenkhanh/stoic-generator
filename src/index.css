@@ -1,13 +1,125 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: rgb(101, 101, 101);
+  --secondary: rgb(90, 69, 69);
+  --light: white;
+
+  --clr-neon: rgb(106, 96, 106);
+  --font: "Lobster Two", cursive;
+  --font-quote: "Fira Sans", monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("https://i.pinimg.com/originals/0c/6d/23/0c6d2328bec650452bcbd9aaa63bc621.jpg")
+    no-repeat;
+  background-size: cover;
+}
+
+.quote-container {
+  position: relative;
+}
+
+blockquote {
+  
+  font-family: var(--font-quote);
+  color: white;
+  max-width: 720px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+.stoic-container,
+.authors {
+  display: inline-block;
+
+  padding: 0.60rem 1.2rem;
+  color: var(--light);
+  border-radius: 1.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2.5px;
+  max-width: 360px;
+  overflow: hidden;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.stoic-container {
+  background-color: var(--secondary);
+  font-weight: 600;
+  transform: translate(-80%, 20%);
+}
+
+.authors {
+  background-color: var(--primary);
+  font-weight: 700;
+  transform: translate(55%, 50%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+button {
+  position: absolute;
+  bottom: 30px;
+  text-decoration: none;
+
+  color: var(--clr-neon);
+  border: currentColor 4px solid;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  
+  transition: 0.4s;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100%/0.5), 0 0 0.125em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+}
+
+button:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    display: block;
+  }
+
+  blockquote {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+  .stoic-container,
+  .authors {
+    font-size: 1.3rem;
+    letter-spacing: 2.5px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  button {
+    padding: 0.7rem 1.2rem;
+    bottom: 30px;
+    font-size: 1.3rem;
+  }
 }
