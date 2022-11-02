@@ -5,7 +5,7 @@ function Quote({ quote }) {
   return (
     <div className="quote-container">
       <div className="stoic-container" title="stoic">
-        <h2 >Stoicism Quote Generator</h2>
+        <h2>Stoicism Quote Generator</h2>
       </div>
       <blockquote>
         <ImQuotesLeft />
